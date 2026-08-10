@@ -1,9 +1,6 @@
 
 # Projeto PRF 2025 — Preparação dos Dados
 
-## Objetivo
-Preparar os dados de acidentes da PRF 2025 para análise exploratória, Power BI e árvore de decisão explicável.
-
 ## Variável-alvo
 `acidente_fatal = 1` quando `mortos >= 1`; caso contrário, `acidente_fatal = 0`.
 
@@ -11,5 +8,16 @@ Preparar os dados de acidentes da PRF 2025 para análise exploratória, Power BI
 - `dados_tratados/base_analitica_prf_2025.csv`: base completa para EDA e Power BI.
 - `dados_tratados/base_modelavel_prf_2025.csv`: base para modelagem, sem data leakage.
 
-## Observação metodológica
-A base modelável exclui mortos, feridos, total_vitimas, indice_gravidade e variáveis diretamente derivadas do desfecho.
+## Fonte dos dados
+
+Dados abertos da PRF — registros de acidentes de trânsito em rodovias federais, ano de 2025. Cada linha representa uma ocorrência (acidente), não um veículo ou uma pessoa envolvida.
+
+## Objetivo
+
+Transformar a base bruta da PRF em duas bases prontas para uso, tratando problemas comuns de dados públicos: encoding, tipos, nulos, duplicidade, padronização de texto e datas — e construir a variável-alvo do projeto.
+
+## Variável-alvo
+
+acidente_fatal = 1 quando mortos >= 1; caso contrário, acidente_fatal = 0.
+
+Nesta execução: 72.529 acidentes, dos quais 7,18% foram fatais.
